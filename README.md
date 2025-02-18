@@ -1,8 +1,8 @@
-# Tesla Watch
+# Tesla Solar Monitoring
 
 Do you need to monitor your Tesla Solar installation, to make sure it is generating power?
 
-I do. My Tesla solar system had two outages last summer; each time it took me a week to realize that the system was down. I lost hundreds of dollars in lost opportunity to generate power.
+I do. My Tesla Solar system had two outages last summer; each time it took me a week to realize that the system was down. I lost hundreds of dollars in lost opportunity to generate power.
 
 So I wrote this simple Tesla Solar installation monitoring system.
 
@@ -19,7 +19,7 @@ Everything else is free, courtesy of Google.
 You will setup the included Apps Script to run daily in your [Apps Script account](https://script.google.com/home).
 
 Then you will get a Tesla "refresh token" and store it in the code (you may need to do this every few months).
-At every run, the script uses the "refresh token" to connect to the Tesla servers on your behalf to pull solar generation stats,
+At every automated (daily) run, the script uses the "refresh token" to connect to the Tesla servers on your behalf to pull solar generation stats,
 the same way the official Tesla app does it.
 If last day's generated solar energy was below a predefined limit, the script will send email(s) to email recipient(s) of your choice 
 (usually to yourself).
