@@ -293,8 +293,7 @@ function getEnergyDataForLastDayOrWeekOrMonth(siteId, period, inTimeZone, numDay
   var  timestamp = new Date();
   if(numDaysBeforeToday>0) {
      // Subtract numDaysBeforeToday from the current timestamp:
-     timestamp2 = new Date( timestamp.setDate( timestamp.getDate()-numDaysBeforeToday));
-     timestamp = timestamp2;
+     timestamp.setDate(timestamp.getDate() - numDaysBeforeToday);
   }
   // Cpompose an "end of the given day" timestamp, e.g. "2024-08-10T23:59:59-07:00". The tesla API does NOT like (errors out) at "midnight" timestamps, e.g.at "2024-08-10T00:00:00-07:00" and "2024-08-10T24:00:00-07:00".
   const timestampInTimeZoneFormatted = Utilities.formatDate( timestamp, inTimeZone, 'yyyy-MM-dd\'T23:59:59\'XXX');
