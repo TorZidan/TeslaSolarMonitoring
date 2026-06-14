@@ -195,9 +195,8 @@ function findOrCreateSheetTabWithNameLike(spreadsheet, tabNameSubstring) {
     }
  */
 function listEnergySiteIdsForAccount(accessToken) {
-  try {
-    const url = "https://owner-api.teslamotors.com/api/1/products";
-    
+  const url = "https://owner-api.teslamotors.com/api/1/products";
+  try {    
     var options = {
       'headers': {
         'authorization': 'Bearer ' + accessToken
@@ -236,8 +235,8 @@ function listEnergySiteIdsForAccount(accessToken) {
  * and retrieves the time zone (e.g. 'America/Los_Angeles')  and country code (e.g. "US") of this energy siteId.
  */
 function getEnergySiteTimeZoneAndCountryCode(siteId, accessToken) {
+  const url = "https://owner-api.teslamotors.com/api/1/energy_sites/"+siteId+"/site_info";
   try {
-    const url = "https://owner-api.teslamotors.com/api/1/energy_sites/"+siteId+"/site_info";
     Logger.log("Getting site info from "+url);
 
     var options = {
@@ -387,8 +386,8 @@ function getNewAccessToken(refreshToken, emailRecipientsIfFailed) {
     -H "Content-Type: application/json" \
     -d "{\"grant_type\":\"refresh_token\",\"client_id\":\"ownerapi\",\"refresh_token\":\"$refresh_token\",\"scope\":\"openid email offline_access\"}"
   */
+  const url = "https://auth.tesla.com/oauth2/v3/token";
   try {
-    const url = "https://auth.tesla.com/oauth2/v3/token";
     const request = {
       "grant_type": "refresh_token",
       "client_id": "ownerapi",
